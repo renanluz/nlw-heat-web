@@ -14,11 +14,11 @@ type Message = {
 }
 
 export function MessageList(){
-  const [messages, setMessage] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>([]);
 
   useEffect(() => {
     api.get<Message[]>('messages/last3').then(response => {
-      setMessage(response.data)
+      setMessages(response.data)
     })
   }, [])
 
